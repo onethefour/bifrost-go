@@ -3,11 +3,12 @@ package expand
 import (
 	"bytes"
 	"fmt"
-	"github.com/JFJun/bifrost-go/expand/bifrost"
-	"github.com/JFJun/bifrost-go/expand/kusama"
-	"github.com/JFJun/bifrost-go/expand/polkadot"
 	"github.com/JFJun/go-substrate-rpc-client/v3/scale"
 	"github.com/JFJun/go-substrate-rpc-client/v3/types"
+	"github.com/onethefour/bifrost-go/expand/bifrost"
+	"github.com/onethefour/bifrost-go/expand/crab"
+	"github.com/onethefour/bifrost-go/expand/kusama"
+	"github.com/onethefour/bifrost-go/expand/polkadot"
 	"strings"
 )
 
@@ -40,6 +41,13 @@ func DecodeEventRecords(meta *types.Metadata, rawData string, chainName string) 
 		ier = &events
 	case "bifrost-parachain":
 		var events bifrost.BifrostEventRecords
+		err := e.DecodeEventRecords(meta, &events)
+		if err != nil {
+			return nil, err
+		}
+		ier = &events
+	case "crab":
+		var events crab.CrabEventRecords
 		err := e.DecodeEventRecords(meta, &events)
 		if err != nil {
 			return nil, err

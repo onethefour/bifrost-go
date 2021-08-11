@@ -3,22 +3,22 @@ package test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/JFJun/bifrost-go/client"
+	"github.com/onethefour/bifrost-go/client"
 	"github.com/JFJun/go-substrate-crypto/ss58"
 	"testing"
 )
 
 func Test_GetBlockByNumber(t *testing.T) {
-	c, err := client.New("wss://rpc.polkadot.io")
+	c, err := client.New("http://54.199.142.233:31933")
 	if err != nil {
 		t.Fatal(err)
 	}
-	c.SetPrefix(ss58.KsmPrefix)
+	c.SetPrefix(ss58.SubstratePrefix)
 	//expand.SetSerDeOptions(false)
 	/*
 		Ksm: 7834050
 	*/
-	resp, err := c.GetBlockByNumber(5429211)
+	resp, err := c.GetBlockByNumber(6492870)
 	if err != nil {
 		t.Fatal(err)
 	}
