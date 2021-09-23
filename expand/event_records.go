@@ -24,6 +24,13 @@ type IEventRecords interface {
 func DecodeEventRecords(meta *types.Metadata, rawData string, chainName string) (IEventRecords, error) {
 	e := types.EventRecordsRaw(types.MustHexDecodeString(rawData))
 	var ier IEventRecords
+	//log.Println(chainName)
+	//log.Println(xutils.String(len(meta.AsMetadataV13.Modules)))
+	//for _,v:= range meta.AsMetadataV13.Modules{
+	//	//if v.Index == 53 || v.Index == 0{
+	//		log.Println(v.Name,v.Index,xutils.String(v))
+	//	//}
+	//}
 	switch strings.ToLower(chainName) {
 	case "polkadot":
 		var events polkadot.PolkadotEventRecords

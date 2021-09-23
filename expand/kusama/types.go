@@ -60,14 +60,15 @@ type KusamaEventRecords struct {
 	Gilt_BidPlaced                                  []EventGiltBidPlaced
 	Gilt_GiltIssued                                 []EventGiltGiltIssued
 	Gilt_GiltThawed                                 []EventGiltGiltThawed
-	ParasInclusion_CandidateBacked                  []EventParasInclusionCandidateBacked
-	ParasInclusion_CandidateIncluded                []EventParasInclusionCandidateIncluded
-	ParasInclusion_CandidateTimedOut                []EventParasInclusionCandidateTimedOut
-	Paras_CurrentCodeUpdated                        []EventParasCurrentCodeUpdated
-	Paras_CurrentHeadUpdated                        []EventParasCurrentHeadUpdated
-	Paras_CodeUpgradeScheduled                      []EventParasCodeUpgradeScheduled
-	Paras_NewHeadNoted                              []EventParasNewHeadNoted
-	Paras_ActionQueued                              []EventParasActionQueued
+	ParaInclusion_CandidateBacked                  []EventParasInclusionCandidateBacked
+	ParaInclusion_CandidateIncluded                []EventParasInclusionCandidateIncluded
+	//ParaInclusion_CandidateIncluded 				[]EventParasInclusionCandidateIncluded
+	ParaInclusion_CandidateTimedOut                []EventParasInclusionCandidateTimedOut
+	Para_CurrentCodeUpdated                        []EventParasCurrentCodeUpdated
+	Para_CurrentHeadUpdated                        []EventParasCurrentHeadUpdated
+	Para_CodeUpgradeScheduled                      []EventParasCodeUpgradeScheduled
+	Para_NewHeadNoted                              []EventParasNewHeadNoted
+	Para_ActionQueued                              []EventParasActionQueued
 	ParasUmp_InvalidFormat                          []EventParasUmpInvalidFormat
 	ParasUmp_UnsupportedVersion                     []EventParasUmpUnsupportedVersion
 	ParasUmp_ExecutedUpward                         []EventParasUmpExecutedUpward
@@ -104,6 +105,7 @@ type KusamaEventRecords struct {
 	Crowdloan_AddedToNewRaise                       []EventCrowdloanAddedToNewRaise
 	XcmPallet_Attempted                             []EventXcmPalletAttempted
 	XcmPallet_Sent                                  []EventXcmPalletSent
+	Utility_ItemCompleted             []types.EventUtilityBatchCompleted             //nolint:stylecheck,golint
 }
 type EventXcmPalletSent struct {
 	Phase          types.Phase

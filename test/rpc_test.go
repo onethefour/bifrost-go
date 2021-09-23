@@ -6,7 +6,29 @@ import (
 	"github.com/onethefour/bifrost-go/client"
 	"github.com/JFJun/go-substrate-crypto/ss58"
 	"testing"
+	"log"
 )
+
+func Test_GetBlockByNumber_ksm(t *testing.T) {
+	log.SetFlags(log.Llongfile)
+	c, err := client.New("http://18.179.223.150:30933")
+	if err != nil {
+		t.Fatal(err)
+	}
+	c.SetPrefix(ss58.SubstratePrefix)
+	//expand.SetSerDeOptions(false)
+	/*
+		Ksm: 7834050
+	*/
+	for i:=9347000;i<9347958;i++{
+		_, err := c.GetBlockByNumber(9347958)
+		if err != nil {
+			t.Log(i)
+			t.Fatal(err)
+		}
+	}
+	//t.Log(String(resp))
+}
 
 func Test_GetBlockByNumber(t *testing.T) {
 	c, err := client.New("http://54.199.142.233:31933")
@@ -18,7 +40,7 @@ func Test_GetBlockByNumber(t *testing.T) {
 	/*
 		Ksm: 7834050
 	*/
-	resp, err := c.GetBlockByNumber(6492870)
+	resp, err := c.GetBlockByNumber(6493205)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -62,4 +84,9 @@ func Test_GetBlockExtrinsic(t *testing.T) {
 	for _, extrinsic := range block.Block.Extrinsics {
 		fmt.Println(extrinsic)
 	}
+}
+
+func String(d interface{}) string{
+	str,_ := json.Marshal(d)
+	return string(str)
 }
