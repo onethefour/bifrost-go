@@ -2,9 +2,10 @@ package kusama
 
 import (
 	"fmt"
-	"github.com/onethefour/bifrost-go/expand/base"
+
 	"github.com/JFJun/go-substrate-rpc-client/v3/scale"
 	"github.com/JFJun/go-substrate-rpc-client/v3/types"
+	"github.com/onethefour/bifrost-go/expand/base"
 )
 
 func (p KusamaEventRecords) GetBalancesTransfer() []types.EventBalancesTransfer {
@@ -60,52 +61,66 @@ type KusamaEventRecords struct {
 	Gilt_BidPlaced                                  []EventGiltBidPlaced
 	Gilt_GiltIssued                                 []EventGiltGiltIssued
 	Gilt_GiltThawed                                 []EventGiltGiltThawed
-	ParaInclusion_CandidateBacked                  []EventParasInclusionCandidateBacked
-	ParaInclusion_CandidateIncluded                []EventParasInclusionCandidateIncluded
+	ParaInclusion_CandidateBacked                   []EventParasInclusionCandidateBacked
+	ParaInclusion_CandidateIncluded                 []EventParasInclusionCandidateIncluded
 	//ParaInclusion_CandidateIncluded 				[]EventParasInclusionCandidateIncluded
-	ParaInclusion_CandidateTimedOut                []EventParasInclusionCandidateTimedOut
-	Para_CurrentCodeUpdated                        []EventParasCurrentCodeUpdated
-	Para_CurrentHeadUpdated                        []EventParasCurrentHeadUpdated
-	Para_CodeUpgradeScheduled                      []EventParasCodeUpgradeScheduled
-	Para_NewHeadNoted                              []EventParasNewHeadNoted
-	Para_ActionQueued                              []EventParasActionQueued
-	ParasUmp_InvalidFormat                          []EventParasUmpInvalidFormat
-	ParasUmp_UnsupportedVersion                     []EventParasUmpUnsupportedVersion
-	ParasUmp_ExecutedUpward                         []EventParasUmpExecutedUpward
-	ParasUmp_WeightExhausted                        []EventParasUmpWeightExhausted
-	ParasUmp_UpwardMessagesReceived                 []EventParasUmpUpwardMessagesReceived
-	ParasHrmp_OpenChannelRequested                  []EventParasHrmpOpenChannelRequested
-	ParasHrmp_OpenChannelAccepted                   []EventParasHrmpOpenChannelAccepted
-	ParasHrmp_ChannelClosed                         []EventParasHrmpChannelClosed
-	Registrar_Registered                            []EventRegistrarRegistered
-	Registrar_Deregistered                          []EventRegistrarDeregistered
-	Registrar_Reserved                              []EventRegistrarReserved
-	Slots_NewLeasePeriod                            []EventSlotsNewLeasePeriod
-	Slots_Leased                                    []EventSlotsLeased
-	Auctions_AuctionStarted                         []EventAuctionsAuctionStarted
-	Auctions_AuctionClosed                          []EventAuctionsAuctionClosed
-	Auctions_WonDeploy                              []EventAuctionsWonDeploy
-	Auctions_WonRenewal                             []EventAuctionsWonRenewal
-	Auctions_Reserved                               []EventAuctionsReserved
-	Auctions_Unreserved                             []EventAuctionsUnreserved
-	Auctions_ReserveConfiscated                     []EventAuctionsReserveConfiscated
-	Auctions_BidAccepted                            []EventAuctionsBidAccepted
-	Auctions_WinningOffset                          []EventAuctionsWinningOffset
-	Crowdloan_Created                               []EventCrowdloanCreated
-	Crowdloan_Contributed                           []EventCrowdloanContributed
-	Crowdloan_Withdrew                              []EventCrowdloanWithdrew
-	Crowdloan_PartiallyRefunded                     []EventCrowdloanPartiallyRefunded
-	Crowdloan_AllRefunded                           []EventCrowdloanAllRefunded
-	Crowdloan_Dissolved                             []EventCrowdloanDissolved
-	Crowdloan_DeployDataFixed                       []EventCrowdloanDeployDataFixed
-	Crowdloan_Onboarded                             []EventCrowdloanOnboarded
-	Crowdloan_HandleBidResult                       []EventCrowdloanHandleBidResult
-	Crowdloan_Edited                                []EventCrowdloanEdited
-	Crowdloan_MemoUpdated                           []EventCrowdloanMemoUpdated
-	Crowdloan_AddedToNewRaise                       []EventCrowdloanAddedToNewRaise
-	XcmPallet_Attempted                             []EventXcmPalletAttempted
-	XcmPallet_Sent                                  []EventXcmPalletSent
-	Utility_ItemCompleted             []types.EventUtilityBatchCompleted             //nolint:stylecheck,golint
+	ParaInclusion_CandidateTimedOut []EventParasInclusionCandidateTimedOut
+	Para_CurrentCodeUpdated         []EventParasCurrentCodeUpdated
+	Para_CurrentHeadUpdated         []EventParasCurrentHeadUpdated
+	Para_CodeUpgradeScheduled       []EventParasCodeUpgradeScheduled
+	Para_NewHeadNoted               []EventParasNewHeadNoted
+	Para_ActionQueued               []EventParasActionQueued
+	ParasUmp_InvalidFormat          []EventParasUmpInvalidFormat
+	ParasUmp_UnsupportedVersion     []EventParasUmpUnsupportedVersion
+	ParasUmp_ExecutedUpward         []EventParasUmpExecutedUpward
+	ParasUmp_WeightExhausted        []EventParasUmpWeightExhausted
+	ParasUmp_UpwardMessagesReceived []EventParasUmpUpwardMessagesReceived
+	ParasHrmp_OpenChannelRequested  []EventParasHrmpOpenChannelRequested
+	ParasHrmp_OpenChannelAccepted   []EventParasHrmpOpenChannelAccepted
+	ParasHrmp_ChannelClosed         []EventParasHrmpChannelClosed
+	Registrar_Registered            []EventRegistrarRegistered
+	Registrar_Deregistered          []EventRegistrarDeregistered
+	Registrar_Reserved              []EventRegistrarReserved
+	Slots_NewLeasePeriod            []EventSlotsNewLeasePeriod
+	Slots_Leased                    []EventSlotsLeased
+	Auctions_AuctionStarted         []EventAuctionsAuctionStarted
+	Auctions_AuctionClosed          []EventAuctionsAuctionClosed
+	Auctions_WonDeploy              []EventAuctionsWonDeploy
+	Auctions_WonRenewal             []EventAuctionsWonRenewal
+	Auctions_Reserved               []EventAuctionsReserved
+	Auctions_Unreserved             []EventAuctionsUnreserved
+	Auctions_ReserveConfiscated     []EventAuctionsReserveConfiscated
+	Auctions_BidAccepted            []EventAuctionsBidAccepted
+	Auctions_WinningOffset          []EventAuctionsWinningOffset
+	Crowdloan_Created               []EventCrowdloanCreated
+	Crowdloan_Contributed           []EventCrowdloanContributed
+	Crowdloan_Withdrew              []EventCrowdloanWithdrew
+	Crowdloan_PartiallyRefunded     []EventCrowdloanPartiallyRefunded
+	Crowdloan_AllRefunded           []EventCrowdloanAllRefunded
+	Crowdloan_Dissolved             []EventCrowdloanDissolved
+	Crowdloan_DeployDataFixed       []EventCrowdloanDeployDataFixed
+	Crowdloan_Onboarded             []EventCrowdloanOnboarded
+	Crowdloan_HandleBidResult       []EventCrowdloanHandleBidResult
+	Crowdloan_Edited                []EventCrowdloanEdited
+	Crowdloan_MemoUpdated           []EventCrowdloanMemoUpdated
+	Crowdloan_AddedToNewRaise       []EventCrowdloanAddedToNewRaise
+	XcmPallet_Attempted             []EventXcmPalletAttempted
+	XcmPallet_Sent                  []EventXcmPalletSent
+	Utility_ItemCompleted           []types.EventUtilityBatchCompleted //nolint:stylecheck,golint
+	Staking_PayoutStarted           []EventStakingPayoutStarted
+	Staking_Rewarded                []EventStakingRewarded
+}
+type EventStakingRewarded struct {
+	Phase     types.Phase
+	AccountId types.AccountID
+	Balance   types.U128
+	Topics    []types.Hash
+}
+type EventStakingPayoutStarted struct {
+	Phase     types.Phase
+	EraIndex  types.U32
+	AccountId types.AccountID
+	Topics    []types.Hash
 }
 type EventXcmPalletSent struct {
 	Phase          types.Phase

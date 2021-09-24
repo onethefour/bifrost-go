@@ -3,13 +3,14 @@ package expand
 import (
 	"bytes"
 	"fmt"
+	"strings"
+
 	"github.com/JFJun/go-substrate-rpc-client/v3/scale"
 	"github.com/JFJun/go-substrate-rpc-client/v3/types"
 	"github.com/onethefour/bifrost-go/expand/bifrost"
 	"github.com/onethefour/bifrost-go/expand/crab"
 	"github.com/onethefour/bifrost-go/expand/kusama"
 	"github.com/onethefour/bifrost-go/expand/polkadot"
-	"strings"
 )
 
 type IEventRecords interface {

@@ -20,14 +20,14 @@ func Test_GetBlockByNumber_ksm(t *testing.T) {
 	/*
 		Ksm: 7834050
 	*/
-	for i:=9347000;i<9347958;i++{
-		_, err := c.GetBlockByNumber(9347958)
+	//for i:=9347000;i<9347958;i++{
+	resp, err := c.GetBlockByNumber(9340031)
 		if err != nil {
-			t.Log(i)
+			//t.Log(i)
 			t.Fatal(err)
 		}
-	}
-	//t.Log(String(resp))
+	//}
+	t.Log(String(resp))
 }
 
 func Test_GetBlockByNumber(t *testing.T) {
