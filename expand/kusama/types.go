@@ -107,8 +107,24 @@ type KusamaEventRecords struct {
 	XcmPallet_Attempted             []EventXcmPalletAttempted
 	XcmPallet_Sent                  []EventXcmPalletSent
 	Utility_ItemCompleted           []types.EventUtilityBatchCompleted //nolint:stylecheck,golint
-	Staking_PayoutStarted           []EventStakingPayoutStarted
-	Staking_Rewarded                []EventStakingRewarded
+
+	Staking_PayoutStarted      []EventStakingPayoutStarted
+	Staking_Rewarded           []EventStakingRewarded
+	Ump_UpwardMessagesReceived []UmpUpwardMessagesReceived
+	Ump_ExecutedUpward         []UmpExecutedUpward
+}
+type UmpExecutedUpward struct {
+	Phase     types.Phase
+	MessageId types.U256
+	Outcome   base.Outcome
+	Topics    []types.Hash
+}
+type UmpUpwardMessagesReceived struct {
+	Phase  types.Phase
+	ParaId types.U32
+	U32    types.U32
+	U32_2  types.U32
+	Topics []types.Hash
 }
 type EventStakingRewarded struct {
 	Phase     types.Phase

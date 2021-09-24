@@ -27,9 +27,9 @@ func DecodeEventRecords(meta *types.Metadata, rawData string, chainName string) 
 	var ier IEventRecords
 	//log.Println(chainName)
 	//log.Println(xutils.String(len(meta.AsMetadataV13.Modules)))
-	//for _,v:= range meta.AsMetadataV13.Modules{
+	//for _, v := range meta.AsMetadataV13.Modules {
 	//	//if v.Index == 53 || v.Index == 0{
-	//		log.Println(v.Name,v.Index,xutils.String(v))
+	//	log.Println(v.Name, v.Index, xutils.String(v))
 	//	//}
 	//}
 	switch strings.ToLower(chainName) {
